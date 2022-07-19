@@ -18,5 +18,8 @@ app.listen(5000, function() {
   console.log('listening on 5000');
 })
 
-const routes = require('./routes/routes');
-app.use('/api', routes);
+// const routes = require('./routes/routes');
+// app.use('/api', routes);
+
+const trending = require('./routes/trending');
+app.use("/api/trending/movies", trending);
