@@ -1,0 +1,13 @@
+@import './theme.scss';
+
+.trending_container {
+  width: inherit;
+  height: inherit;
+
+  .trending_movies_container {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, 150px);
+    grid-row-gap: $spacingNormal;
+    grid-column-gap: $spacingLarge;
+  }
+}

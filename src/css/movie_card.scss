@@ -1,0 +1,7 @@
+@import './theme.scss';
+
+.movie_card_container {
+  display: flex;
+  border: 1px solid green;
+  font-size: $font-size-md;
+}

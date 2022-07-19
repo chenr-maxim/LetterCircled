@@ -1,12 +1,12 @@
 import React from 'react';
 import Trending from './trending';
 
-const home = () => {
+const Home = () => {
   return (
-    <div>
+    <div className="home-container">
       <Trending />
     </div>
   );
 };
 
-export default home;
+export default Home;

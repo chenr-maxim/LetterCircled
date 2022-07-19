@@ -21,5 +21,6 @@ app.listen(5000, function() {
 // const routes = require('./routes/routes');
 // app.use('/api', routes);
 
-const trending = require('./routes/trending');
-app.use("/api/trending/movies", trending);
+const trending = require('./routes/movies');
+app.use('/api/movies/', trending);
+

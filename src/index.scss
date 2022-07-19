@@ -1,5 +1,14 @@
-@import-normalize;
+@import './css/reset.scss';
 
 :root {
   font-size: 14px;
+}
+
+.home-container {
+  height: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33.333vw;
+  border: 1px solid red;
 }
