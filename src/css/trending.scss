@@ -1,13 +1,37 @@
 @import './theme.scss';
 
 .trending_container {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .trending_movies_container {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, 150px);
-    grid-row-gap: $spacingNormal;
-    grid-column-gap: $spacingLarge;
+  .slider_container {
+    position: relative;
+    width: 50%;
+
+
+    .arrow {
+      position: absolute;
+      margin: auto;
+      bottom: 0;
+      top: 0;
+      width: 35px;
+      height: 35px;
+      border: 1px solid $accent;
+      border-radius: 20px;
+    }
+
+    .arrow:hover {
+      background-color: $accent;
+    }
+
+    .next_arrow {
+      left: 100%;
+    }
+
+    .prev_arrow {
+      right: 100%;
+    }
   }
 }

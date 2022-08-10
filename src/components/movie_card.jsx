@@ -5,7 +5,6 @@ const MovieCard = ({movie}) => {
   const moviePoster = `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
   return (
     <div className="movie_card_container">
-      {movie.title}
       <img src={`${moviePoster}`} />
     </div>
   );
