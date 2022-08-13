@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as API from '../util/api';
 import Slider from 'react-slick';
+import MovieCard from './movie_card';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 
 import "slick-carousel/slick/slick.css";
@@ -54,11 +55,12 @@ const Trending = () => {
   }, [])
 
   const trendingMoviesList = trendingMovies && trendingMovies.map((movie) => {
-    const moviePoster = `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
+    // const moviePoster = `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
     return (
-      <div className="movie_card_container">
-        <img src={`${moviePoster}`} />
-      </div>
+      // <div className="movie_card_container">
+      //   <img src={`${moviePoster}`} />
+      // </div>
+      <MovieCard movie={movie}/>
     );
   })
 

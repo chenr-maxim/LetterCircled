@@ -1,7 +1,46 @@
 @import './theme.scss';
 
 .movie_card_container {
-  // display: flex;
-  // width: 125px;
+  position: relative;
+  width: 185px;
   font-size: $font-size-md;
+
+  .movie_action_bar {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .85);
+
+    .fa_watched_icon {
+      color: white;
+      cursor: pointer;
+    }
+
+    .fa_favorited_icon {
+      color: white;
+      cursor: pointer;
+    }
+
+    .fa_watched_icon:hover {
+      color: #1CEB15;
+    }
+
+    .fa_favorited_icon:hover {
+      color: #EB154D;
+    }
+
+  }
+}
+
+.movie_card_container:hover .movie_action_bar {
+  display: flex;
+  width: 40%;
+  padding: $spacingSmall 0;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  border-radius: $spacingNormal;
 }

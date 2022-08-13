@@ -8,7 +8,8 @@
 
   .slider_container {
     position: relative;
-    width: 600px;
+    width: 607px;
+    margin: 0;
 
     .arrow {
       position: absolute;
@@ -23,6 +24,7 @@
 
     .arrow:hover {
       background-color: $accent;
+      cursor: pointer;
     }
 
     .next_arrow {

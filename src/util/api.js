@@ -6,3 +6,4 @@ const api = axios.create({
 
 export const getTrendingMovies = () => api.get(`/movies/trending`);
 export const getMoviePoster = (posterPath) => api.get(`/movies/poster/${posterPath}`)
+export const setUserWatchedMovie = (payload) => api.post(`/movies/user/watched`);
