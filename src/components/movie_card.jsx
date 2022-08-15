@@ -13,8 +13,8 @@ const MovieCard = ({movie}) => {
     <div className="movie_card_container">
       <img src={`${moviePoster}`} />
       <div className="movie_action_bar">
-        <FaEye className={"fa_watched_icon"} />
-        <FaHeart className={"fa_favorited_icon"} />
+        <FaEye className={"fa_icon fa_watched_icon"} />
+        <FaHeart className={"fa_icon fa_favorited_icon"} />
       </div>
     </div>
   );
