@@ -11,6 +11,9 @@ const UserSchema = new Schema({
   watched_movies: [{
     type: mongoose.Schema.Types.Mixed
   }],
+  liked_movies: [{
+    type: mongoose.Schema.Types.Mixed
+  }],
   username: {
     type: String
   }

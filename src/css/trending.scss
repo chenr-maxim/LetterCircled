@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+
+  .trending_text {
+    justify-self: flex-start;
+    align-self: flex-start;;
+  }
 
   .slider_container {
     position: relative;

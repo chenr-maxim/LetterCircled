@@ -1,0 +1,31 @@
+@import './theme.scss';
+
+.header_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: inherit;
+  height: 35px;
+
+  font-size: $font-size-md;
+
+  .nav_menu_container {
+  
+    ul {
+      display: flex;
+  
+      li {
+        margin: 0 $spacingNormal;
+      }
+  
+      li:first-child {
+        margin-left: 0;
+      }
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

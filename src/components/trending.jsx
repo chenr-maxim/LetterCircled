@@ -66,9 +66,9 @@ const Trending = () => {
 
   return (
     <div className="trending_container">
-      <h2>
+      <div className="trending_text">
         What's Trending
-      </h2>
+      </div>
       <div className="slider_container">
         <Slider 
           {...settings}
