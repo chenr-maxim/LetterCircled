@@ -1,7 +1,10 @@
 @import './css/reset.scss';
+@import './css/theme.scss';
 
 :root {
   font-size: 14px;
+  background-color: $root-bg-color;
+  color: white;
 }
 
 .home-container {

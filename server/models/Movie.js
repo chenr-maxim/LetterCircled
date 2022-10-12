@@ -11,7 +11,7 @@ const MovieDataSchema = new Schema({
   original_language: {type: String},
   release_date: {type: String},
   status: {type: String},
-  id: {type: String},
+  id: {type: Number},
   genres: [{
     any: [Schema.Types.Mixed]
   }]

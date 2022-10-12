@@ -15,18 +15,16 @@ router.get('/trending', async(req, res) => {
 
 router.post('/user/watched', async(req, res) => {
   const watchedMovie = {
-    title: req.body.movie.title,
-    overview: req.body.movie.overview,
-    status: req.body.movie.status,
-    tagline: req.body.movie.tagline,
-    poster_path: req.body.movie.poster_path,
-    original_title: req.body.movie.original_title,
-    original_language: req.body.movie.original_language,
-    id: req.body.movie.id,
-    release_date: req.body.movie.release_date,
-    status: req.body.movie.status,
-    genres: req.body.movie.genres
+    title: req.body.title,
+    overview: req.body.overview,
+    poster_path: req.body.poster_path,
+    original_title: req.body.original_title,
+    original_language: req.body.original_language,
+    id: req.body.id,
+    release_date: req.body.release_date,
+    genre_ids: req.body.genre_ids
   }
+
   await User.findOne({_id: req.body.id})
   .then((user) => {
     user.watched_movies.addToSet(watchedMovie);
@@ -44,18 +42,16 @@ router.post('/user/watched', async(req, res) => {
 
 router.post('/user/liked', async(req, res) => {
   const likedMovie = {
-    title: req.body.movie.title,
-    overview: req.body.movie.overview,
-    status: req.body.movie.status,
-    tagline: req.body.movie.tagline,
-    poster_path: req.body.movie.poster_path,
-    original_title: req.body.movie.original_title,
-    original_language: req.body.movie.original_language,
-    id: req.body.movie.id,
-    release_date: req.body.movie.release_date,
-    status: req.body.movie.status,
-    genres: req.body.movie.genres
+    title: req.body.title,
+    overview: req.body.overview,
+    poster_path: req.body.poster_path,
+    original_title: req.body.original_title,
+    original_language: req.body.original_language,
+    id: req.body.id,
+    release_date: req.body.release_date,
+    genre_ids: req.body.genre_ids
   }
+
   await User.findOne({_id: req.body.id})
   .then((user) => {
     user.watched_movies.addToSet(likedMovie);
