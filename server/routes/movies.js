@@ -4,6 +4,7 @@ const router = express.Router();
 const { tmdb_api_key } =  require('../../config/keys');
 const Movie = require('../models/Movie');
 const User = require('../models/User');
+const mongoose = require('mongoose');
 
 router.get('/trending', async(req, res) => {
   await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${tmdb_api_key}`)
@@ -14,30 +15,35 @@ router.get('/trending', async(req, res) => {
 })
 
 router.post('/user/watched', async(req, res) => {
-  const watchedMovie = {
-    title: req.body.title,
-    overview: req.body.overview,
-    poster_path: req.body.poster_path,
-    original_title: req.body.original_title,
-    original_language: req.body.original_language,
-    id: req.body.id,
-    release_date: req.body.release_date,
-    genre_ids: req.body.genre_ids
+  const movieMetaData = {
+    title: req.body.movie.title,
+    overview: req.body.movie.overview,
+    poster_path: req.body.movie.poster_path,
+    original_title: req.body.movie.original_title,
+    original_language: req.body.movie.original_language,
+    id: req.body.movie.id,
+    release_date: req.body.movie.release_date,
+    genre_ids: req.body.movie.genres
   }
 
-  await User.findOne({_id: req.body.id})
-  .then((user) => {
-    user.watched_movies.addToSet(watchedMovie);
-    user.save();
-    return res.status(200).json({
+  const watchedMovie = {
+    'movie_meta_data': movieMetaData,
+    'rating': req.body.rating
+  }
+
+  try {
+    const user = await User.findOneAndUpdate(
+      {_id: req.body.id},
+      { $push: { watched_movies_list: watchedMovie }});
+    res.status(200).json({
       success: 'true',
-      user: user
+      user: user._id,
+      movie: watchedMovie
     })
-  })
-  .catch((err) => {
-    console.log(err);
+  } catch (err) {
     res.status(400).json(err);
-  })
+    throw err;
+  }
 })
 
 router.post('/user/liked', async(req, res) => {
@@ -65,10 +71,6 @@ router.post('/user/liked', async(req, res) => {
     console.log(err);
     res.status(400).json(err);
   })
-})
-
-router.get('/user/watched', async(req, res) => {
-
 })
 
 router.get('/config', async(req, res) => {
