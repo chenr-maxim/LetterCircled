@@ -10,11 +10,8 @@ const UserSchema = new Schema({
   password: {
     type: String
   },
-  watched_movies: [{
-    type: Schema.Types.Mixed
-  }],
   liked_movies: [{
-    type: Schema.Types.Mixed
+    movie_meta_data: MovieDataSchema
   }],
   username: {
     type: String

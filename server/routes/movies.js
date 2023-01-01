@@ -55,12 +55,12 @@ router.post('/user/liked', async(req, res) => {
     original_language: req.body.original_language,
     id: req.body.id,
     release_date: req.body.release_date,
-    genre_ids: req.body.genre_ids
+    genre_ids: req.body.genres
   }
 
   await User.findOne({_id: req.body.id})
   .then((user) => {
-    user.watched_movies.addToSet(likedMovie);
+    user.liked_movies.addToSet(likedMovie);
     user.save();
     return res.status(200).json({
       success: 'true',

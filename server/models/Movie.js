@@ -26,5 +26,5 @@ const MovieSchema = new Schema({
 }, {timestamps: true})
 
 const Movie = mongoose.model('Movie', MovieSchema);
-const MovieMetaData = mongoose.model('MovieMetaData', MovieDataSchema);
+// const MovieMetaData = mongoose.model('MovieMetaData', MovieDataSchema);
 module.exports = { Movie, MovieMetaData, MovieDataSchema };
